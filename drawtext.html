@@ -1,0 +1,22 @@
+<html>
+ <head>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+				ctx.font = "100px sans-serif"
+		    ctx.fillText("天若有情", 10, 100);
+		    ctx.strokeText("天若有情", 10, 200);;
+	    }
+
+			// alert(canvas.toDataURL());
+    }
+
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="450" height="450" style="border:1px solid #000"></canvas>
+ </body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+ <head>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+				ctx.save(); //保存坐原点平移之前的状态
+		    ctx.translate(100, 100);
+		    ctx.strokeRect(0, 0, 100, 100)
+		    ctx.restore(); //恢复到最初状态
+		    ctx.translate(220, 220);
+		    ctx.fillRect(0, 0, 100, 100);
+	    }
+
+			// alert(canvas.toDataURL());
+    }
+
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="450" height="450" style="border:1px solid #000"></canvas>
+ </body>
+</html>

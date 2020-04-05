@@ -1,0 +1,21 @@
+<html>
+ <head>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+	    	ctx.fillRect(10, 10, 100, 50);  		//绘制矩形,填充的默认颜色为黑色
+    		ctx.strokeRect(10, 70, 100, 50);  	//绘制矩形边框
+    		ctx.clearRect(15, 15, 50, 25);			//清除区域，会完全变透明
+  	  }
+
+      // alert(canvas.toDataURL());
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="250" height="250" style="border:1px solid #000"></canvas>
+ </body>
+</html>

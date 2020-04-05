@@ -1,0 +1,22 @@
+<html>
+ <head>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+				ctx.setLineDash([20, 5]);  // [实线长度, 间隙长度]
+		    ctx.lineDashOffset = -0;
+		    ctx.strokeRect(50, 50, 210, 210);
+			}
+
+			// alert(canvas.toDataURL());
+    }
+
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="450" height="450" style="border:1px solid #000"></canvas>
+ </body>
+</html>

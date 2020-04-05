@@ -1,0 +1,39 @@
+<html>
+ <head>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+				var lineCaps = ["butt", "round", "square"];
+
+				for (var i = 0; i < 3; i++){
+				    ctx.beginPath();
+				    ctx.moveTo(20 + 30 * i, 30);
+				    ctx.lineTo(20 + 30 * i, 100);
+				    ctx.lineWidth = 20;
+				    ctx.lineCap = lineCaps[i];
+				    ctx.stroke();
+				}
+
+				ctx.beginPath();
+				ctx.moveTo(0, 30);
+				ctx.lineTo(300, 30);
+
+				ctx.moveTo(0, 100);
+				ctx.lineTo(300, 100)
+
+				ctx.strokeStyle = "red";
+				ctx.lineWidth = 1;
+				ctx.stroke();
+	    }
+
+			// alert(canvas.toDataURL());
+    }
+
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="450" height="450" style="border:1px solid #000"></canvas>
+ </body>
+</html>

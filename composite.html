@@ -1,0 +1,29 @@
+<html>
+ <head>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+				ctx.fillStyle = "blue";
+        ctx.fillRect(0, 0, 200, 200);
+
+				//source-over, source-in, source-out, source-atop
+				//destination-over, destination-in, destination-out, destination-atop
+				//lighter, darken, lighten, xor, copy
+        // ctx.globalCompositeOperation = "source-over"; //全局合成操作
+        ctx.globalCompositeOperation = "darken";
+        ctx.fillStyle = "red";
+        ctx.fillRect(100, 100, 200, 200);
+	    }
+
+			// alert(canvas.toDataURL());
+    }
+
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="450" height="450" style="border:1px solid #000"></canvas>
+ </body>
+</html>

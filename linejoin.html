@@ -1,0 +1,32 @@
+<html>
+ <head>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+				var lineJoin = ['round', 'bevel', 'miter'];
+		    ctx.lineWidth = 20;
+
+		    for (var i = 0; i < lineJoin.length; i++){
+		        ctx.lineJoin = lineJoin[i];
+		        ctx.beginPath();
+		        ctx.moveTo(50, 50 + i * 50);
+		        ctx.lineTo(100, 100 + i * 50);
+		        ctx.lineTo(150, 50 + i * 50);
+		        ctx.lineTo(200, 100 + i * 50);
+		        ctx.lineTo(250, 50 + i * 50);
+		        ctx.stroke();
+		    }
+	    }
+
+			// alert(canvas.toDataURL());
+    }
+
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="450" height="450" style="border:1px solid #000"></canvas>
+ </body>
+</html>

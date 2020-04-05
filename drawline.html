@@ -1,0 +1,24 @@
+<html>
+ <head>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+	    	ctx.beginPath(); //新建一条path
+    		ctx.moveTo(50, 50); //把画笔移动到指定的坐标
+    		ctx.lineTo(200, 50);  //绘制一条从当前位置到指定坐标(200, 50)的直线
+    		//闭合路径，会拉一条从当前点到path起始点的直线。如果当前点与起始点重合，则什么都不做
+    		ctx.closePath();
+    		ctx.stroke(); //绘制路径
+  	  }
+
+      // alert(canvas.toDataURL());
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="250" height="250" style="border:1px solid #000"></canvas>
+ </body>
+</html>
